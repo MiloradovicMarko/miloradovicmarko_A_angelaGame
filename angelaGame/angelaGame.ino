@@ -94,8 +94,7 @@ void caso0(int giocata)
 }
 void caso1(int giocata)
 {
-      attesa();
-      if(giocata == 1 || giocata == 6 || giocata == 0)
+      if(giocata == 1 || giocata == 6 || giocata == 0 && giocata > 6)
       { Serial.println("Non barare");attesa() ;} 
       else
       {
@@ -110,7 +109,7 @@ void caso1(int giocata)
 }
 void caso2(int giocata)
 {     
-      if(giocata == 2 || giocata == 5 || giocata == 0)
+      if((giocata == 2 || giocata == 5 || giocata == 0)&& giocata > 6)
       { Serial.println("Non barare");attesa();} 
       else
       {
@@ -124,7 +123,7 @@ void caso2(int giocata)
 }
 void caso3(int giocata)
 {
-      if(giocata == 3 || giocata == 4 || giocata == 0)
+      if((giocata == 3 || giocata == 4 || giocata == 0)&& giocata > 6)
       { Serial.println("Non barare");attesa();} 
       else
       {
@@ -151,7 +150,7 @@ void winOrLose()
 {
   if((somma == meta && turno == 1) || (somma >= meta && turno == 1))
   {
-    Serial.println("Ha vinto il primo giocatore!");
+    Serial.println("Ha vinto il primo giocatore!");ricomincia();
     ricomincia();
   }
   else if((somma == meta && turno == -1) || (somma >= meta && turno == -1))
