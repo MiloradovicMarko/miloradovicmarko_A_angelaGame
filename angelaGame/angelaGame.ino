@@ -58,8 +58,8 @@ void definisciMeta()
 {
   if(turnoStart){
       Serial.println("Inserisci meta");
-      meta = Serial.parseInt();
       attesa();
+      meta = Serial.parseInt();
       Serial.println(meta);
       turnoStart = false;  
       }
